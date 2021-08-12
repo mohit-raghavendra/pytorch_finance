@@ -1,8 +1,0 @@
-README.md
-setup.py
-torch_finance/__init__.py
-torch_finance.egg-info/PKG-INFO
-torch_finance.egg-info/SOURCES.txt
-torch_finance.egg-info/dependency_links.txt
-torch_finance.egg-info/requires.txt
-torch_finance.egg-info/top_level.txt
