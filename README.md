@@ -1,1 +1,1 @@
-# pytorch_finance
+# torch_finance
