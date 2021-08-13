@@ -3,9 +3,9 @@ from setuptools import find_packages, setup
 setup(
     name='torch_finance',
     packages=['torch_finance'],
-    version='0.1.0.2',
+    version='0.0.1',
     description='PyTorch library for finance',
-    author='Me',
+    author='Mohit Raghavendra',
     license='MIT',
     install_requires=['numpy', 'torch'],
     setup_requires=['pytest-runner'],
