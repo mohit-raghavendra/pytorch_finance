@@ -2,8 +2,8 @@ from setuptools import find_packages, setup
 
 setup(
     name='torch_finance',
-    packages=find_packages(include=['torch_finance']),
-    version='0.1.0.1',
+    packages=['torch_finance'],
+    version='0.1.0.2',
     description='PyTorch library for finance',
     author='Me',
     license='MIT',
