@@ -7,12 +7,12 @@ class BinomialStockOption(object):
 	def __init__(self, 
 				initial_price: torch.tensor, 
 				strike_price: torch.tensor, 
-				r: float, 
+				r: torch.tensor,
 				is_put: torch.tensor,
-				time_to_maturity: int = 1, 
-				no_timesteps: int = 2, 
-				prob_up: torch.tensor = 0, 
-				prob_down: torch.tensor = 0, 
+				time_to_maturity: int, 
+				no_timesteps: int, 
+				prob_up: torch.tensor, 
+				prob_down: torch.tensor, 
 				dividiend_yield: float = 0):
 
 		"""
@@ -50,22 +50,22 @@ class BinomialEuropeanOption(BinomialStockOption):
 	def __init__(self, 
 				initial_price: torch.tensor, 
 				strike_price: torch.tensor, 
-				r: float, 
+				r: torch.tensor, 
 				is_put: torch.tensor,
-				time_to_maturity: int = 1, 
-				no_timesteps: int = 2, 
-				prob_up: torch.tensor = 0, 
-				prob_down: torch.tensor = 0, 
+				time_to_maturity: int, 
+				no_timesteps: int, 
+				prob_up: torch.tensor, 
+				prob_down: torch.tensor, 
 				dividiend_yield: float = 0):
 
 		"""
-		:param initial_price: initial stock price
-		:param strike_price: strike price
+		:param initial_price: initial price of each option in the batch
+		:param strike_price: strike price of each option in the batch
 		:param r: risk-free interest rate
-		:param is_put: True for a put option, False for a call option
-		:param time_to_maturity: time to maturity
+		:param is_put: True for a put option, False for a call option (of each option in the batch)
+		:param time_to_maturity: time to maturity 
 		:param no_timesteps: number of time steps
-		:param prob_up: probability at up state
+		:param prob_up: probability at up state 
 		:param prob_down: probability at down state
 		:param dividiend_yield: Dividend yield
 		"""
