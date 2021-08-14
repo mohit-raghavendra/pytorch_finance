@@ -2,8 +2,17 @@ import torch
 
 class ForwardRates(object):
     
-    def __init__(self, periods, spot_rates):
+    def __init__(self, 
+                periods: torch.tensor,
+                spot_rates: torch.tensor):
         
+        """
+        Calculates the forward rates for a set of spot rates
+
+        :param periods: Time in years
+        :param spot_rates: Spot rates at each time point
+
+        """
         periods, indices = torch.sort(periods)
         spot_rates = spot_rates[indices]
         self.spot_rates = dict(zip(periods.tolist(), spot_rates.tolist()))
@@ -11,6 +20,11 @@ class ForwardRates(object):
                 
     def get_forward_rates(self):
         
+        """
+        Calculates the forward rates
+
+        :returns Tensor of forward rates at each point in the future
+        """
         times = sorted(self.spot_rates.keys())
         
         for T1, T2 in zip(times, times[1:]):
