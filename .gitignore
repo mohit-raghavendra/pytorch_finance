@@ -2,6 +2,6 @@ build/
 dist/
 torch_finance_venv/
 torch_finance.egg-info/
-__pycache__
+__pycache__/
 .eggs/
 .pycache_test/		
